@@ -6,6 +6,9 @@
 
 > Looking for Pixelitos in HD? see [Ilustraciones](https://github.com/itzselenux/ilustraciones-icon-theme)
  
+ ## Preview
+ You can preview pixelitos icons on their [website](https://itszariep.codeberg.page/projects/pixelitos-icon-theme/icons/)
+ 
  ## Installation
 ```bash
 git clone https://github.com/ItzSelenux/pixelitos-icon-theme
