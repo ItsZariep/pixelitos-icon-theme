@@ -5,7 +5,7 @@ Inherits=breeze,hicolor
 
 Example=folder
 
-FollowsColorScheme=true
+FollowsColorScheme=false
 
 DesktopDefault=16
 DesktopSizes=16,22,24,32,48,64
@@ -139,4 +139,3 @@ Size=128
 MinSize=16
 MaxSize=512
 Type=Scalable
-
