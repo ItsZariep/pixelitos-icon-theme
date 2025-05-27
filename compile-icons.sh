@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ ! -d "128" ]; then
-  mkdir -v 128
+	mkdir -v 128
 fi
 
 cp -rvn 16/* 128
