@@ -1,4 +1,6 @@
 # pixelitos-icon-theme
+
+<img src="https://itszariep.codeberg.page/projects/pixelitos-icon-theme/1.webp" width="320px" alt="pixelitos" />
 16-bit style icon theme
  
 >[!note]
