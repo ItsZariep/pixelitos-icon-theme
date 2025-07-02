@@ -2,15 +2,33 @@
 set -e
 
 xdg="${XDG_DATA_HOME:-${HOME}/.local/share}"
-DIR="${xdg}/icons/pixelitos-icon-theme"
-ICON_FOLDER="${DIR}/128"
+ICON_DIRS="${xdg}/icons"
+DIR_DARK="${xdg}/icons/pixelitos-dark"
+DIR_LIGHT="${xdg}/icons/pixelitos-light"
+ICONS_128="${DIR_DARK}/128"
 
 install_pixelitos_theme() {
-	echo "Creating theme directory: ${DIR}"
-	mkdir -p "${DIR}"
+	#echo "Creating theme directory: ${DIR_DARK}"
+	#mkdir -p "${DIR_DARK}"
+	#echo "Creating theme directory: ${DIR_LIGHT}"
+	#mkdir -p "${DIR_LIGHT}"
 
-	if cp -r ./* "${DIR}"; then
-		echo "Installation successful!"
+	if cp -rv ./pixelitos-dark "${DIR_DARK}"; then
+		echo "DONE: Install ${DIR_DARK}"
+	else
+		echo "Error: Failed to copy files."
+		exit 1
+	fi
+
+	if cp -rv ./install.sh "${DIR_DARK}"; then
+		echo "DONE: Install ${DIR_DARK}"
+	else
+		echo "Error: Failed to copy files."
+		exit 1
+	fi
+
+	if cp -rv ./pixelitos-light "${DIR_LIGHT}"; then
+		echo "DONE: Install ${DIR_LIGHT}"
 	else
 		echo "Error: Failed to copy files."
 		exit 1
@@ -19,7 +37,7 @@ install_pixelitos_theme() {
 
 compile_icons() {
 	echo "Compiling 128x128 icons..."
-	if ./compile-icons.sh; then
+	if ./pixelitos-dark/compile-icons.sh; then
 		echo "Icons compiled successfully!"
 	else
 		echo "Error: Failed to compile icons."
@@ -42,9 +60,9 @@ case "$answer" in
 		;;
 esac
 
-if [ ! -d "${ICON_FOLDER}" ]; then
-	echo "'128' folder does not exist. Compiling icons..."
-	compile_icons
+if [ ! -d "${ICONS_128}" ]; then
+	echo "${ICONS_128} folder does not exist. Compiling icons..."
+	./pixelitos-dark/compile-icons.sh
 else
 	echo "Do you want to (re)compile 128x128 icons? (Y/n)"
 	read -r answer
