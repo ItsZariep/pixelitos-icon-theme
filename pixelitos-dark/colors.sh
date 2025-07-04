@@ -10,9 +10,9 @@ colors["#779b50"]="#57335f" #bg2 (top of the folder)
 colors["#67804f"]="#57335f" #bg2 (top of the folder, is little messed)
 
 for image in folder-colors/$input_folder/16/places/*.png; do
-    for original_color in "${!colors[@]}"; do
-        new_color="${colors[$original_color]}"
-        magick "$image" -fill "$new_color" -opaque "$original_color" "$image"
-    done
-    echo "Colors replaced in: $image"
+	for original_color in "${!colors[@]}"; do
+		new_color="${colors[$original_color]}"
+		magick "$image" -fill "$new_color" -opaque "$original_color" "$image"
+	done
+	echo "Colors replaced in: $image"
 done

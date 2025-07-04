@@ -1,34 +1,39 @@
 # pixelitos-icon-theme
 
 <img src="https://itszariep.codeberg.page/projects/pixelitos-icon-theme/1.webp" width="320px" alt="pixelitos" />
+
 16-bit style icon theme
  
 >[!note]
 > pixelitos-icon-theme is under constantly development, if you want a icon to be added, please make an issue
 
-> Looking for Pixelitos in HD? see [Ilustraciones](https://github.com/itzselenux/ilustraciones-icon-theme)
+> Looking for Pixelitos in HD? see [Ilustraciones](https://github.com/itszariep/ilustraciones-icon-theme)
  
- ## Preview
- You can preview pixelitos icons on their [website](https://itszariep.codeberg.page/projects/pixelitos-icon-theme/icons/)
+## Preview
+You can preview pixelitos icons on their [website](https://itszariep.codeberg.page/projects/pixelitos-icon-theme/icons/)
  
- ## Installation
+## Installation
+
+### Release
+Download a [Release](https://github.com/ItsZariep/pixelitos-icon-theme/releases) and extract the archive in `~/.local/share/icons`
+
+### Git
+ 
 ```bash
-git clone https://github.com/ItzSelenux/pixelitos-icon-theme
+git clone https://github.com/itszariep/pixelitos-icon-theme
+```
+```bash
+cd pixelitos-icon-theme
+install.sh
 ```
 
 > [!Note]
-> Due to space problems in the repository, it only contains the 16x16 icons, so the 128x128 icons (which display correctly in the apps) need to be generated with ImageMagick. 
+> Due to space problems in the repository, it only contains the 16x16 icons, so the 128x128 icons (which display correctly in the apps) need to be generated with ImageMagick (install.sh will also ask you this when you install the theme). 
 
 ```
-cd pixelitos-icon-theme
+cd pixelitos-icon-theme/pixelitos-dark
 ./compile-icons.sh
-cd ../
 ```
-
-```
-mv pixelitos-icon-theme ~/.local/share/icons/pixelitos
-```
-
 
 ### Folder colors
 
@@ -36,3 +41,11 @@ You can choose a folder color by copying the content of a folder from `folder-co
 ```
 ./folder-colors.sh
 ```
+
+Available colors:
+
+![img](https://raw.githubusercontent.com/ItsZariep/pixelitos-icon-theme/refs/heads/main/pixelitos-dark/folder-colors/blue/16/places/folder.png)
+![img](https://raw.githubusercontent.com/ItsZariep/pixelitos-icon-theme/refs/heads/main/pixelitos-dark/folder-colors/red/16/places/folder.png)
+![img](https://raw.githubusercontent.com/ItsZariep/pixelitos-icon-theme/refs/heads/main/pixelitos-dark/folder-colors/green/16/places/folder.png)
+![img](https://raw.githubusercontent.com/ItsZariep/pixelitos-icon-theme/refs/heads/main/pixelitos-dark/folder-colors/linuxmint/16/places/folder.png)
+![img](https://raw.githubusercontent.com/ItsZariep/pixelitos-icon-theme/refs/heads/main/pixelitos-dark/folder-colors/purple/16/places/folder.png)

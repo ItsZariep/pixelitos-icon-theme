@@ -1,5 +1,6 @@
 #!/bin/bash
 
+set -e
 BASE_DIR="folder-colors"
 DEST_DIR="./16/places"
 
@@ -35,3 +36,6 @@ fi
 
 echo "Copying files from $SOURCE_DIR to $DEST_DIR..."
 cp -vrf $SOURCE_DIR/* $DEST_DIR/
+
+rm -rv 128/places
+./compile-icons.sh
