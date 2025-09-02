@@ -1,6 +1,6 @@
 # pixelitos-icon-theme
 
-<img src="https://itszariep.codeberg.page/projects/pixelitos-icon-theme/1.webp" width="320px" alt="pixelitos" />
+<img src="https://itszariep.codeberg.page/webdemo/pixelitos-icon-theme/1.webp" width="320px" alt="pixelitos" />
 
 16-bit style icon theme
  
@@ -10,7 +10,7 @@
 > Looking for Pixelitos in HD? see [Ilustraciones](https://github.com/itszariep/ilustraciones-icon-theme)
  
 ## Preview
-You can preview pixelitos icons on their [website](https://itszariep.codeberg.page/projects/pixelitos-icon-theme/icons/)
+You can preview pixelitos icons on their [website](https://itszariep.codeberg.page/webdemo/pixelitos-icon-theme/)
  
 ## Installation
 <details>
