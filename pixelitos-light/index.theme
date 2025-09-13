@@ -4,26 +4,25 @@ Comment=Pixel Art Style icons
 Inherits=breeze-dark,hicolor
 
 Example=folder
-
 FollowsColorScheme=true
 
 DesktopDefault=16
-DesktopSizes=16,22,24,32,48,64
+DesktopSizes=16,128
 ToolbarDefault=16
-ToolbarSizes=16,22,24,32,48
+ToolbarSizes=16,128
 MainToolbarDefault=16
-MainToolbarSizes=16,22,24,32,48
+MainToolbarSizes=16,128
 SmallDefault=16
-SmallSizes=16,22,24,32,48
+SmallSizes=16,128
 PanelDefault=16
-PanelSizes=16,22,24,32,48,64
+PanelSizes=16,128
 DialogDefault=16
-DialogSizes=16,22,24,32,48,64
+DialogSizes=16,128
 
 # Directory list
-Directories=16/actions,16/apps,16/categories,16/devices,16/emblems,16/mimetypes,16/places,16/status,16/distributor-logo,16/symbolic,128/actions,128/apps,128/categories,128/devices,128/emblems,128/mimetypes,128/places,128/status,128/distributor-logo,16/symbolic
+Directories=16/actions,16/apps,16/categories,16/devices,16/emblems,16/mimetypes,16/places,16/status,16/distributor-logo,16/symbolic,128/actions,128/apps,128/categories,128/devices,128/emblems,128/mimetypes,128/places,128/status,128/distributor-logo,128/symbolic
 
-#16x
+# 16x
 #########################################
 [16/actions]
 Context=Actions
@@ -55,11 +54,6 @@ Context=MimeTypes
 Size=16
 Type=Fixed
 
-[16/panel]
-Context=Status
-Size=16
-Type=Fixed
-
 [16/places]
 Context=Places
 Size=16
@@ -80,7 +74,7 @@ Context=Applications
 Size=16
 Type=Fixed
 
-#128x
+# 128x
 #########################################
 [128/actions]
 Context=Actions
