@@ -1,0 +1,50 @@
+name: Build Pixelitos Icon Theme
+
+on:
+  push:
+    branches: ["actions"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y imagemagick libgtk-3-bin
+
+      - name: Clone pixelitos-icon-theme repo
+        run: |
+          git clone https://github.com/ItsZariep/pixelitos-icon-theme.git
+
+      - name: Compile icons
+        run: |
+          cd pixelitos-icon-theme/pixelitos-dark
+          chmod +x compile-icons.sh
+          ./compile-icons.sh
+
+      - name: Create symlinks
+        run: |
+          ln -s pixelitos-icon-theme/pixelitos-dark .
+          ln -s pixelitos-icon-theme/pixelitos-light .
+
+      - name: Create tarball
+        run: |
+          tar -czvf pixelitos-icon-theme.tar.gz \
+            pixelitos-dark \
+            pixelitos-light \
+            pixelitos-icon-theme
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pixelitos-icon-theme
+          path: pixelitos-icon-theme.tar.gz
+
