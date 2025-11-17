@@ -10,41 +10,58 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout main repo
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Install dependencies
         run: |
           sudo apt update
           sudo apt install -y imagemagick libgtk-3-bin
 
-      - name: Clone pixelitos-icon-theme repo
+      - name: Prepare workspace
+        run: mkdir build
+
+      - name: Clone theme repo
         run: |
-          git clone https://github.com/ItsZariep/pixelitos-icon-theme.git
+          git clone --depth 1 https://github.com/ItsZariep/pixelitos-icon-theme.git
+          mv pixelitos-icon-theme build/
+
+      - name: Remove Git directories
+        run: |
+          find build/pixelitos-icon-theme -type d -name ".git" -exec rm -rf {} +
+          find build/pixelitos-icon-theme -type d -name ".github" -exec rm -rf {} +
 
       - name: Compile icons
         run: |
-          cd pixelitos-icon-theme/pixelitos-dark
+          cd build/pixelitos-icon-theme/pixelitos-dark
           chmod +x compile-icons.sh
           ./compile-icons.sh
 
-      - name: Create symlinks
+      - name: Create clean symlinks
         run: |
+          cd build
           ln -s pixelitos-icon-theme/pixelitos-dark .
           ln -s pixelitos-icon-theme/pixelitos-light .
 
       - name: Create tarball
         run: |
-          tar -czvf pixelitos-icon-theme.tar.gz \
+          cd build
+          tar -czvf ../pixelitos-icon-theme.tar.gz \
             pixelitos-dark \
             pixelitos-light \
             pixelitos-icon-theme
+            
+      - name: Get current date for tag
+        id: date
+        run: echo "date=$(date +'%Y%m%d')" >> $GITHUB_OUTPUT
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+      - name: Create Release and Upload Asset
+        uses: softprops/action-gh-release@v1
         with:
-          name: pixelitos-icon-theme
-          path: pixelitos-icon-theme.tar.gz
-
+          tag_name: "${{ steps.date.outputs.date }}"
+          name: "${{ steps.date.outputs.date }}"
+          body: "Automated build of Pixelitos Icon Theme from commit ${{ github.sha }}"
+          draft: true
+          files: pixelitos-icon-theme.tar.gz
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
