@@ -53,6 +53,7 @@ Available colors:
 ![img](https://raw.githubusercontent.com/ItsZariep/pixelitos-icon-theme/refs/heads/main/pixelitos-dark/folder-colors/green/16/places/folder.png)
 ![img](https://raw.githubusercontent.com/ItsZariep/pixelitos-icon-theme/refs/heads/main/pixelitos-dark/folder-colors/linuxmint/16/places/folder.png)
 ![img](https://raw.githubusercontent.com/ItsZariep/pixelitos-icon-theme/refs/heads/main/pixelitos-dark/folder-colors/purple/16/places/folder.png)
+![img](https://raw.githubusercontent.com/ItsZariep/pixelitos-icon-theme/refs/heads/main/pixelitos-dark/folder-colors/catppuccin-mocha-mauve/16/places/folder.png)
 </details>
 
 ## Theming recommendations:
