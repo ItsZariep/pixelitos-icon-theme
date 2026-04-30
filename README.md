@@ -1,5 +1,7 @@
 # pixelitos-icon-theme
 
+[![LiberaPay](https://liberapay.com/assets/widgets/donate.svg)](https://liberapay.com/zariep/donate)
+
 <img src="https://itszariep.codeberg.page/webdemo/pixelitos-icon-theme/1.webp" width="320px" alt="pixelitos" />
 
 16-bit style icon theme
