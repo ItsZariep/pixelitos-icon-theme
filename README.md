@@ -66,3 +66,8 @@ Available colors:
 ### Cursors:
 - [Pixelfun 2](https://www.pling.com/p/1278934/)
 - [Onedark](https://www.pling.com/p/1567279/)
+
+## Other pixel art icon themes
+didn't like the style of pixelitos? you can try:
+
+- [Pixora](https://github.com/tsora1603/pixora-icons)
